@@ -40,7 +40,7 @@ int main()
 	Nz::Window& window = windowingApp.CreateWindow(Nz::VideoMode(1280, 720), windowTitle);
 	Nz::WindowSwapchain windowSwapchain(device, window);
 
-	std::shared_ptr<Nz::Mesh> spaceshipMesh = Nz::Mesh::LoadFromFile(resourceDir / "Spaceship/spaceship.obj", meshParams);
+	std::shared_ptr<Nz::Mesh> spaceshipMesh = Nz::Mesh::LoadFromFile(resourceDir / "sponza/sponza.obj", meshParams);
 	if (!spaceshipMesh)
 	{
 		NazaraError("failed to load model");

@@ -22,6 +22,11 @@
 #include <NZSL/Ast/Module.hpp>
 #include <array>
 #include <stdexcept>
+
+#ifdef NAZARA_PLATFORM_ANDROID
+#include <Nazara/Core/Android/AndroidActivity.hpp>
+#endif
+
 #include <Nazara/Graphics/Debug.hpp>
 
 namespace Nz
@@ -111,6 +116,10 @@ namespace Nz
 	{
 		Renderer* renderer = Renderer::Instance();
 
+#ifdef NAZARA_PLATFORM_ANDROID
+		AndroidActivity::Instance()->Poll();
+#endif
+
 		const std::vector<RenderDeviceInfo>& renderDeviceInfo = renderer->QueryRenderDevices();
 		if (renderDeviceInfo.empty())
 			throw std::runtime_error("no render device available");
@@ -165,6 +174,10 @@ namespace Nz
 
 		m_materialInstanceLoader.RegisterLoader(Loaders::GetMaterialInstanceLoader_Texture()); // texture to material loader
 		m_pipelinePassListLoader.RegisterLoader(Loaders::GetPipelinePassListLoader()); // texture to material loader
+
+#ifdef NAZARA_PLATFORM_ANDROID
+		AndroidActivity::Instance()->Poll();
+#endif
 	}
 
 	Graphics::~Graphics()

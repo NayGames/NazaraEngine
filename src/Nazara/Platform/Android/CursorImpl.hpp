@@ -4,15 +4,14 @@
 
 #pragma once
 
-#ifndef NAZARA_PLATFORM_SDL2_CURSORIMPL_HPP
-#define NAZARA_PLATFORM_SDL2_CURSORIMPL_HPP
+#ifndef NAZARA_PLATFORM_ANDROID_CURSORIMPL_HPP
+#define NAZARA_PLATFORM_ANDROID_CURSORIMPL_HPP
 
-#include <NazaraUtils/Prerequisites.hpp>
+#include <Nazara/Prerequisites.hpp>
 #include <Nazara/Math/Vector2.hpp>
 #include <Nazara/Platform/Enums.hpp>
 #include <Nazara/Utility/Image.hpp>
-#include <NazaraUtils/MovablePtr.hpp>
-#include <SDL_mouse.h>
+#include <Nazara/Utils/MovablePtr.hpp>
 
 namespace Nz
 {
@@ -23,18 +22,11 @@ namespace Nz
 			CursorImpl(SystemCursor cursor);
 			CursorImpl(const CursorImpl&) = delete;
 			CursorImpl(CursorImpl&&) noexcept = default;
-			~CursorImpl();
-
-			SDL_Cursor* GetCursor();
+			~CursorImpl() = default;
 
 			CursorImpl& operator=(const CursorImpl&) = delete;
 			CursorImpl& operator=(CursorImpl&&) noexcept = default;
-
-		private:
-			MovablePtr<SDL_Cursor> m_cursor;
-			MovablePtr<SDL_Surface> m_surface;
-			Image m_cursorImage;
 	};
 }
 
-#endif // NAZARA_PLATFORM_SDL2_CURSORIMPL_HPP
+#endif // NAZARA_PLATFORM_ANDROID_CURSORIMPL_HPP
