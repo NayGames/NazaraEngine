@@ -442,7 +442,7 @@ namespace Nz
 		{
 			TextureInfo texInfo;
 			texInfo.width = texInfo.height = texInfo.depth = texInfo.levelCount = 1;
-			texInfo.pixelFormat = PixelFormat::L8;
+			texInfo.pixelFormat = PixelFormat::L8Unorm;
 
 			std::array<UInt8, 6> whitePixels = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
 

@@ -51,7 +51,7 @@ int main()
 
 	// Texture
 	std::shared_ptr<Nz::Image> diffuseImage = Nz::Image::LoadFromFile(resourceDir / "Spaceship/Texture/diffuse.png");
-	if (!diffuseImage || !diffuseImage->Convert(Nz::PixelFormat::RGBA8_SRGB))
+	if (!diffuseImage || !diffuseImage->Convert(Nz::PixelFormat::RGBA8_sRGB))
 	{
 		NazaraError("failed to load image");
 		return __LINE__;
@@ -59,7 +59,7 @@ int main()
 
 	Nz::TextureParams texParams;
 	texParams.renderDevice = device;
-	texParams.loadFormat = Nz::PixelFormat::RGBA8_SRGB;
+	texParams.loadFormat = Nz::PixelFormat::RGBA8_sRGB;
 
 	std::shared_ptr<Nz::Texture> diffuseTexture = Nz::Texture::LoadFromFile(resourceDir / "Spaceship/Texture/diffuse.png", texParams);
 

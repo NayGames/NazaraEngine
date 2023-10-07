@@ -201,66 +201,187 @@ namespace Nz
 	{
 		Undefined = -1,
 
-		A8,              // 1*uint8
-		BGR8,            // 3*uint8
-		BGR8_SRGB,       // 3*uint8
-		BGRA8,           // 4*uint8
-		BGRA8_SRGB,      // 4*uint8
-		DXT1,
-		DXT3,
-		DXT5,
-		L8,              // 1*uint8
-		LA8,             // 2*uint8
-		R8,              // 1*uint8
-		R8I,             // 1*int8
-		R8UI,            // 1*uint8
-		R16,             // 1*uint16
-		R16F,            // 1*half
-		R16I,            // 1*int16
-		R16UI,           // 1*uint16
-		R32F,            // 1*float
-		R32I,            // 1*uint16
-		R32UI,           // 1*uint32
-		RG8,             // 2*int8
-		RG8I,            // 2*int8
-		RG8UI,           // 2*uint8
-		RG16,            // 2*uint16
-		RG16F,           // 2*half
-		RG16I,           // 2*int16
-		RG16UI,          // 2*uint16
-		RG32F,           // 2*float
-		RG32I,           // 2*uint16
-		RG32UI,          // 2*uint32
-		RGB5A1,          // 3*uint5 + alpha bit
-		RGB8,            // 3*uint8
-		RGB8_SRGB,       // 3*uint8
-		RGB16F,          // 3*half
-		RGB16I,          // 4*int16
-		RGB16UI,         // 4*uint16
-		RGB32F,          // 3*float
-		RGB32I,          // 4*int32
-		RGB32UI,         // 4*uint32
-		RGBA4,           // 4*uint4
-		RGBA8,           // 4*uint8
-		RGBA8_SRGB,      // 4*uint8
-		RGBA16F,         // 4*half
-		RGBA16I,         // 4*int16
-		RGBA16UI,        // 4*uint16
-		RGBA32F,         // 4*float
-		RGBA32I,         // 4*int32
-		RGBA32UI,        // 4*uint32
-		Depth16,
-		Depth16Stencil8,
-		Depth24,
-		Depth24Stencil8,
-		Depth32F,
-		Depth32FStencil8,
-		Stencil1,
-		Stencil4,
-		Stencil8,
-		Stencil16,
+		/***** Regular 8bits formats *****/
 
-		Max = Stencil16
+		// A
+		A8Sint,
+		A8Snorm,
+		A8Uint,
+		A8Unorm,
+
+		// L
+		L8Sint,
+		L8Snorm,
+		L8Uint,
+		L8Unorm,
+		L8Unorm_sRGB,
+
+		// R
+		R8Sint,
+		R8Snorm,
+		R8Uint,
+		R8Unorm,
+		R8Unorm_sRGB,
+
+		/***** Regular 16bits formats *****/
+
+		// R
+		R16Float,
+		R16Sint,
+		R16Snorm,
+		R16Uint,
+		R16Unorm,
+		R16Unorm_sRGB,
+
+		// RG
+		RG8Sint,
+		RG8Snorm,
+		RG8Uint,
+		RG8Unorm,
+		RG8Unorm_sRGB,
+
+		// LA
+		LA8Unorm,
+
+		/***** Regular 24bits formats *****/
+
+		// BGR
+		BGR8Sint,
+		BGR8Snorm,
+		BGR8Uint,
+		BGR8Unorm,
+		BGR8Unorm_sRGB,
+
+		// RGB
+		RGB8Sint,
+		RGB8Snorm,
+		RGB8Uint,
+		RGB8Unorm,
+		RGB8Unorm_sRGB,
+
+		/***** Regular 32bits formats *****/ 
+
+		// R
+		R32Sint,
+		R32Snorm,
+		R32Float,
+		R32Uint,
+		R32Unorm,
+		R32Unorm_sRGB,
+
+		// RG
+		RG16Sint,
+		RG16Snorm,
+		RG16Float,
+		RG16Uint,
+		RG16Unorm,
+		RG16Unorm_sRGB,
+
+		// RGBA
+		RGBA8Sint,
+		RGBA8Snorm,
+		RGBA8Uint,
+		RGBA8Unorm,
+		RGBA8Unorm_sRGB,
+
+		// BGRA
+		BGRA8Sint,
+		BGRA8Snorm,
+		BGRA8Uint,
+		BGRA8Unorm,
+		BGRA8Unorm_sRGB,
+
+		/***** Regular 48bits formats *****/
+		RGB16Float,
+		RGB16Sint,
+		RGB16Snorm,
+		RGB16Uint,
+		RGB16Unorm,
+
+		/***** Regular 64bits formats *****/
+
+		// RG
+		RG32Float,
+		RG32Sint,
+		RG32Uint,
+
+		// RGBA
+		RGBA16Float,
+		RGBA16Sint,
+		RGBA16Snorm,
+		RGBA16Uint,
+		RGBA16Unorm,
+
+		/***** Regular 96bits formats *****/
+		RGB32Float,
+		RGB32Sint,
+		RGB32Snorm,
+		RGB32Uint,
+		RGB32Unorm,
+
+		/***** Regular 128bits formats *****/
+		RGBA32Float,
+		RGBA32Sint,
+		RGBA32Snorm,
+		RGBA32Uint,
+		RGBA32Unorm,
+
+		/***** Packed 16bits formats *****/
+		A1BGR5Unorm,
+		ABGR4Unorm,
+		BGRA4Unorm,
+		B5G6R5Unorm,
+		BGR5A1Unorm,
+		RGBA4Unorm,
+		RGB5A1Unorm,
+
+		/***** Packed 32bits formats *****/
+		BGR10A2Unorm,
+		RGB10A2Uint,
+		RGB10A2Unorm,
+		RG11B10Float,
+		RGB9E5Float,
+
+		/***** BC formats (block, previously called DXT) *****/
+		BC1,
+		BC1_sRGB,
+		BC2,
+		BC2_sRGB,
+		BC3,
+		BC3_sRGB,
+		BC4_RSnorm,
+		BC4_RUnorm,
+		BC5_RGSnorm,
+		BC5_RGUnorm,
+		BC6H_RGBFloat,
+		BC7,
+		BC7_sRGB,
+
+		/***** EAC formats (block) *****/
+		EAC_R11Snorm,
+		EAC_R11Unorm,
+		EAC_RG11Snorm,
+		EAC_RG11Unorm,
+
+		/***** ETC2 formats (block) *****/
+		ETC2_RGB8,
+		ETC2_RGB8_sRGB,
+		ETC2_RGBA1,
+		ETC2_RGBA1_sRGB,
+		ETC2_RGBA8,
+		ETC2_RGBA8_sRGB,
+
+		/***** Depth and stencil formats *****/
+		Depth16Float,
+		Depth16Unorm,
+		Depth16Unorm_Stencil8,
+		Depth24Unorm,
+		Depth24Unorm_Stencil8,
+		Depth32Float,
+		Depth32Float_Stencil8,
+		Stencil8,
+
+		Max = Stencil8
 	};
 
 	constexpr std::size_t PixelFormatCount = static_cast<std::size_t>(PixelFormat::Max) + 1;
@@ -268,11 +389,11 @@ namespace Nz
 	enum class PixelFormatSubType
 	{
 		Compressed, // Opaque
-		Double,     // F64
-		Float,      // F32
-		Half,       // F16
-		Int,        //   Signed integer
-		Unsigned,   // Unsigned integer
+		Double,     // f64
+		Float,      // f32
+		Half,       // f16
+		Int,        // int
+		Unsigned,   // uint
 
 		Max = Unsigned
 	};

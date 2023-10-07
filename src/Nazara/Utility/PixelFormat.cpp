@@ -25,7 +25,7 @@ namespace Nz
 
 		/**********************************A8***********************************/
 		template<>
-		UInt8* ConvertPixels<PixelFormat::A8, PixelFormat::BGRA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::A8Unorm, PixelFormat::BGRA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -41,7 +41,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::A8, PixelFormat::LA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::A8Unorm, PixelFormat::LA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -55,7 +55,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::A8, PixelFormat::RGB5A1>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::A8Unorm, PixelFormat::RGB5A1Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			UInt16* ptr = reinterpret_cast<UInt16*>(dst);
 			while (start < end)
@@ -77,7 +77,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::A8, PixelFormat::RGBA4>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::A8Unorm, PixelFormat::RGBA4>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			UInt16* ptr = reinterpret_cast<UInt16*>(dst);
 			while (start < end)
@@ -96,7 +96,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::A8, PixelFormat::RGBA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::A8Unorm, PixelFormat::RGBA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -113,7 +113,7 @@ namespace Nz
 
 		/**********************************BGR8***********************************/
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGR8, PixelFormat::BGRA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGR8Unorm, PixelFormat::BGRA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -129,16 +129,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGR8, PixelFormat::BGR8_SRGB>(const UInt8* start, const UInt8* end, UInt8* dst)
-		{
-			//FIXME: Not correct
-			std::size_t count = end - start;
-			std::memcpy(dst, start, count);
-			return dst + count;
-		}
-
-		template<>
-		UInt8* ConvertPixels<PixelFormat::BGR8, PixelFormat::L8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGR8Unorm, PixelFormat::L8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -151,7 +142,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGR8, PixelFormat::LA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGR8Unorm, PixelFormat::LA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -165,7 +156,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGR8, PixelFormat::RGB5A1>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGR8Unorm, PixelFormat::RGB5A1Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			UInt16* ptr = reinterpret_cast<UInt16*>(dst);
 			while (start < end)
@@ -187,7 +178,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGR8, PixelFormat::RGB8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGR8Unorm, PixelFormat::RGB8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -202,7 +193,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGR8, PixelFormat::RGBA4>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGR8Unorm, PixelFormat::RGBA4>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			UInt16* ptr = reinterpret_cast<UInt16*>(dst);
 			while (start < end)
@@ -224,7 +215,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGR8, PixelFormat::RGBA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGR8Unorm, PixelFormat::RGBA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -240,7 +231,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGR8, PixelFormat::RGBA32F>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGR8Unorm, PixelFormat::RGBA32Float>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			float* ptr = reinterpret_cast<float*>(dst);
 			while (start < end)
@@ -258,7 +249,7 @@ namespace Nz
 
 		/**********************************BGRA8**********************************/
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGRA8, PixelFormat::A8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGRA8Unorm, PixelFormat::A8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -271,7 +262,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGRA8, PixelFormat::BGR8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGRA8Unorm, PixelFormat::BGR8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -286,16 +277,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGRA8, PixelFormat::BGRA8_SRGB>(const UInt8* start, const UInt8* end, UInt8* dst)
-		{
-			//FIXME: Not correct
-			std::size_t count = end - start;
-			std::memcpy(dst, start, count);
-			return dst + count;
-		}
-
-		template<>
-		UInt8* ConvertPixels<PixelFormat::BGRA8, PixelFormat::L8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGRA8Unorm, PixelFormat::L8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -308,7 +290,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGRA8, PixelFormat::LA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGRA8Unorm, PixelFormat::LA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -322,7 +304,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGRA8, PixelFormat::RGBA4>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGRA8Unorm, PixelFormat::RGBA4>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			UInt16* ptr = reinterpret_cast<UInt16*>(dst);
 			while (start < end)
@@ -344,7 +326,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGRA8, PixelFormat::RGB5A1>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGRA8Unorm, PixelFormat::RGB5A1Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			UInt16* ptr = reinterpret_cast<UInt16*>(dst);
 			while (start < end)
@@ -366,7 +348,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGRA8, PixelFormat::RGB8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGRA8Unorm, PixelFormat::RGB8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -381,7 +363,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGRA8, PixelFormat::RGBA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGRA8Unorm, PixelFormat::RGBA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -397,7 +379,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::BGRA8, PixelFormat::RGBA32F>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::BGRA8Unorm, PixelFormat::RGBA32Float>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			float* ptr = reinterpret_cast<float*>(dst);
 			while (start < end)
@@ -415,7 +397,7 @@ namespace Nz
 
 		/***********************************L8************************************/
 		template<>
-		UInt8* ConvertPixels<PixelFormat::L8, PixelFormat::BGR8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::L8Unorm, PixelFormat::BGR8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -430,7 +412,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::L8, PixelFormat::BGRA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::L8Unorm, PixelFormat::BGRA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -446,7 +428,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::L8, PixelFormat::LA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::L8Unorm, PixelFormat::LA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -460,7 +442,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::L8, PixelFormat::RGB5A1>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::L8Unorm, PixelFormat::RGB5A1Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			UInt16* ptr = reinterpret_cast<UInt16*>(dst);
 			while (start < end)
@@ -484,7 +466,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::L8, PixelFormat::RGB8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::L8Unorm, PixelFormat::RGB8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -499,7 +481,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::L8, PixelFormat::RGBA4>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::L8Unorm, PixelFormat::RGBA4>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			UInt16* ptr = reinterpret_cast<UInt16*>(dst);
 			while (start < end)
@@ -523,7 +505,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::L8, PixelFormat::RGBA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::L8Unorm, PixelFormat::RGBA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -539,7 +521,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::L8, PixelFormat::RGBA32F>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::L8Unorm, PixelFormat::RGBA32Float>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			float* ptr = reinterpret_cast<float*>(dst);
 			while (start < end)
@@ -557,7 +539,7 @@ namespace Nz
 
 		/***********************************LA8***********************************/
 		template<>
-		UInt8* ConvertPixels<PixelFormat::LA8, PixelFormat::A8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::LA8Unorm, PixelFormat::A8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -570,7 +552,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::LA8, PixelFormat::BGR8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::LA8Unorm, PixelFormat::BGR8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -585,7 +567,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::LA8, PixelFormat::BGRA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::LA8Unorm, PixelFormat::BGRA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -601,7 +583,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::LA8, PixelFormat::L8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::LA8Unorm, PixelFormat::L8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -614,7 +596,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::LA8, PixelFormat::RGB5A1>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::LA8Unorm, PixelFormat::RGB5A1Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			UInt16* ptr = reinterpret_cast<UInt16*>(dst);
 			while (start < end)
@@ -635,7 +617,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::LA8, PixelFormat::RGB8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::LA8Unorm, PixelFormat::RGB8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -650,7 +632,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::LA8, PixelFormat::RGBA4>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::LA8Unorm, PixelFormat::RGBA4>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			UInt16* ptr = reinterpret_cast<UInt16*>(dst);
 			while (start < end)
@@ -671,7 +653,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::LA8, PixelFormat::RGBA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::LA8Unorm, PixelFormat::RGBA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -687,7 +669,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::LA8, PixelFormat::RGBA32F>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::LA8Unorm, PixelFormat::RGBA32Float>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			float* ptr = reinterpret_cast<float*>(dst);
 			while (start < end)
@@ -705,7 +687,7 @@ namespace Nz
 
 		/*********************************RGBA4***********************************/
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA4, PixelFormat::A8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA4, PixelFormat::A8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -724,7 +706,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA4, PixelFormat::BGR8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA4, PixelFormat::BGR8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -745,7 +727,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA4, PixelFormat::BGRA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA4, PixelFormat::BGRA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -767,7 +749,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA4, PixelFormat::L8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA4, PixelFormat::L8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -790,7 +772,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA4, PixelFormat::LA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA4, PixelFormat::LA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -814,7 +796,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA4, PixelFormat::RGB5A1>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA4, PixelFormat::RGB5A1Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			UInt16* ptr = reinterpret_cast<UInt16*>(dst);
 			while (start < end)
@@ -844,7 +826,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA4, PixelFormat::RGB8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA4, PixelFormat::RGB8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -865,7 +847,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA4, PixelFormat::RGBA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA4, PixelFormat::RGBA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -888,7 +870,7 @@ namespace Nz
 
 		/*********************************RGB5A1**********************************/
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB5A1, PixelFormat::A8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGB5A1Unorm, PixelFormat::A8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -907,7 +889,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB5A1, PixelFormat::BGR8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGB5A1Unorm, PixelFormat::BGR8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -928,7 +910,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB5A1, PixelFormat::BGRA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGB5A1Unorm, PixelFormat::BGRA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -950,7 +932,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB5A1, PixelFormat::L8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGB5A1Unorm, PixelFormat::L8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -973,7 +955,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB5A1, PixelFormat::LA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGB5A1Unorm, PixelFormat::LA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -997,7 +979,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB5A1, PixelFormat::RGB8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGB5A1Unorm, PixelFormat::RGB8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -1018,7 +1000,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB5A1, PixelFormat::RGBA4>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGB5A1Unorm, PixelFormat::RGBA4>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			UInt16* ptr = reinterpret_cast<UInt16*>(dst);
 			while (start < end)
@@ -1047,7 +1029,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB5A1, PixelFormat::RGBA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGB5A1Unorm, PixelFormat::RGBA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -1070,7 +1052,7 @@ namespace Nz
 
 		/**********************************RGB8***********************************/
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB8, PixelFormat::BGR8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGB8Unorm, PixelFormat::BGR8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -1085,7 +1067,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB8, PixelFormat::BGRA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGB8Unorm, PixelFormat::BGRA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -1101,7 +1083,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB8, PixelFormat::L8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGB8Unorm, PixelFormat::L8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -1114,7 +1096,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB8, PixelFormat::LA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGB8Unorm, PixelFormat::LA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -1128,7 +1110,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB8, PixelFormat::RGB5A1>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGB8Unorm, PixelFormat::RGB5A1Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			UInt16* ptr = reinterpret_cast<UInt16*>(dst);
 			while (start < end)
@@ -1150,7 +1132,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB8, PixelFormat::RGBA4>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGB8Unorm, PixelFormat::RGBA4>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			UInt16* ptr = reinterpret_cast<UInt16*>(dst);
 			while (start < end)
@@ -1172,16 +1154,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB8, PixelFormat::RGB8_SRGB>(const UInt8* start, const UInt8* end, UInt8* dst)
-		{
-			//FIXME: Not correct
-			std::size_t count = end - start;
-			std::memcpy(dst, start, count);
-			return dst + count;
-		}
-
-		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB8, PixelFormat::RGBA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGB8Unorm, PixelFormat::RGBA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -1197,7 +1170,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGB8, PixelFormat::RGBA32F>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGB8Unorm, PixelFormat::RGBA32Float>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			float* ptr = reinterpret_cast<float*>(dst);
 			while (start < end)
@@ -1215,7 +1188,7 @@ namespace Nz
 
 		/**********************************RGBA8**********************************/
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA8, PixelFormat::A8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA8Unorm, PixelFormat::A8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -1228,7 +1201,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA8, PixelFormat::BGR8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA8Unorm, PixelFormat::BGR8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -1243,7 +1216,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA8, PixelFormat::BGRA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA8Unorm, PixelFormat::BGRA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -1259,7 +1232,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA8, PixelFormat::L8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA8Unorm, PixelFormat::L8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -1272,7 +1245,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA8, PixelFormat::LA8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA8Unorm, PixelFormat::LA8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -1286,7 +1259,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA8, PixelFormat::RGB5A1>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA8Unorm, PixelFormat::RGB5A1Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			UInt16* ptr = reinterpret_cast<UInt16*>(dst);
 			while (start < end)
@@ -1308,7 +1281,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA8, PixelFormat::RGB8>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA8Unorm, PixelFormat::RGB8Unorm>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			while (start < end)
 			{
@@ -1323,7 +1296,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA8, PixelFormat::RGBA4>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA8Unorm, PixelFormat::RGBA4>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			UInt16* ptr = reinterpret_cast<UInt16*>(dst);
 			while (start < end)
@@ -1345,16 +1318,7 @@ namespace Nz
 		}
 
 		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA8, PixelFormat::RGBA8_SRGB>(const UInt8* start, const UInt8* end, UInt8* dst)
-		{
-			//FIXME: Not correct
-			std::size_t count = end - start;
-			std::memcpy(dst, start, count);
-			return dst + count;
-		}
-
-		template<>
-		UInt8* ConvertPixels<PixelFormat::RGBA8, PixelFormat::RGBA32F>(const UInt8* start, const UInt8* end, UInt8* dst)
+		UInt8* ConvertPixels<PixelFormat::RGBA8Unorm, PixelFormat::RGBA32Float>(const UInt8* start, const UInt8* end, UInt8* dst)
 		{
 			float* ptr = reinterpret_cast<float*>(dst);
 			while (start < end)
@@ -1508,54 +1472,50 @@ namespace Nz
 		b32.Resize(128);
 
 		// Setup informations about every pixel format
-		SetupPixelFormat(PixelFormat::A8,               PixelFormatDescription("A8",               PixelFormatContent::ColorRGBA,    0,                  0,                  0,                  0xFF,               PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::BGR8,             PixelFormatDescription("BGR8",             PixelFormatContent::ColorRGBA,    0x0000FF,           0x00FF00,           0xFF0000,           0,                  PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::BGR8_SRGB,        PixelFormatDescription("BGR8_SRGB",        PixelFormatContent::ColorRGBA,    0x0000FF,           0x00FF00,           0xFF0000,           0,                  PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::BGRA8,            PixelFormatDescription("BGRA8",            PixelFormatContent::ColorRGBA,    0x0000FF00,         0x00FF0000,         0xFF000000,         0x000000FF,         PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::BGRA8_SRGB,       PixelFormatDescription("BGRA8_SRGB",       PixelFormatContent::ColorRGBA,    0x0000FF00,         0x00FF0000,         0xFF000000,         0x000000FF,         PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::DXT1,             PixelFormatDescription("DXT1",             PixelFormatContent::ColorRGBA,    8,                                                                              PixelFormatSubType::Compressed));
-		SetupPixelFormat(PixelFormat::DXT3,             PixelFormatDescription("DXT3",             PixelFormatContent::ColorRGBA,    16,                                                                             PixelFormatSubType::Compressed));
-		SetupPixelFormat(PixelFormat::DXT5,             PixelFormatDescription("DXT5",             PixelFormatContent::ColorRGBA,    16,                                                                             PixelFormatSubType::Compressed));
-		SetupPixelFormat(PixelFormat::L8,               PixelFormatDescription("L8",               PixelFormatContent::ColorRGBA,    0xFF,               0xFF,               0xFF,               0,                  PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::LA8,              PixelFormatDescription("LA8",              PixelFormatContent::ColorRGBA,    0xFF00,             0xFF00,             0xFF00,             0x00FF,             PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::R8,               PixelFormatDescription("R8",               PixelFormatContent::ColorRGBA,    0xFF,               0,                  0,                  0,                  PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::R8I,              PixelFormatDescription("R8I",              PixelFormatContent::ColorRGBA,    0xFF,               0,                  0,                  0,                  PixelFormatSubType::Int));
-		SetupPixelFormat(PixelFormat::R8UI,             PixelFormatDescription("R8UI",             PixelFormatContent::ColorRGBA,    0xFF,               0,                  0,                  0,                  PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::R16,              PixelFormatDescription("R16",              PixelFormatContent::ColorRGBA,    0xFFFF,             0,                  0,                  0,                  PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::R16F,             PixelFormatDescription("R16F",             PixelFormatContent::ColorRGBA,    0xFFFF,             0,                  0,                  0,                  PixelFormatSubType::Half));
-		SetupPixelFormat(PixelFormat::R16I,             PixelFormatDescription("R16I",             PixelFormatContent::ColorRGBA,    0xFFFF,             0,                  0,                  0,                  PixelFormatSubType::Int));
-		SetupPixelFormat(PixelFormat::R16UI,            PixelFormatDescription("R16UI",            PixelFormatContent::ColorRGBA,    0xFFFF,             0,                  0,                  0,                  PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::R32F,             PixelFormatDescription("R32F",             PixelFormatContent::ColorRGBA,    0xFFFFFFFF,         0,                  0,                  0,                  PixelFormatSubType::Float));
-		SetupPixelFormat(PixelFormat::R32I,             PixelFormatDescription("R32I",             PixelFormatContent::ColorRGBA,    0xFFFFFFFF,         0,                  0,                  0,                  PixelFormatSubType::Int));
-		SetupPixelFormat(PixelFormat::R32UI,            PixelFormatDescription("R32UI",            PixelFormatContent::ColorRGBA,    0xFFFFFFFF,         0,                  0,                  0,                  PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::RG8,              PixelFormatDescription("RG8",              PixelFormatContent::ColorRGBA,    0xFF00,             0x00FF,             0,                  0,                  PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::RG8I,             PixelFormatDescription("RG8I",             PixelFormatContent::ColorRGBA,    0xFF00,             0x00FF,             0,                  0,                  PixelFormatSubType::Int));
-		SetupPixelFormat(PixelFormat::RG8UI,            PixelFormatDescription("RG8UI",            PixelFormatContent::ColorRGBA,    0xFF00,             0x00FF,             0,                  0,                  PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::RG16,             PixelFormatDescription("RG16",             PixelFormatContent::ColorRGBA,    0xFFFF0000,         0x0000FFFF,         0,                  0,                  PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::RG16F,            PixelFormatDescription("RG16F",            PixelFormatContent::ColorRGBA,    0xFFFF0000,         0x0000FFFF,         0,                  0,                  PixelFormatSubType::Half));
-		SetupPixelFormat(PixelFormat::RG16I,            PixelFormatDescription("RG16I",            PixelFormatContent::ColorRGBA,    0xFFFF0000,         0x0000FFFF,         0,                  0,                  PixelFormatSubType::Int));
-		SetupPixelFormat(PixelFormat::RG16UI,           PixelFormatDescription("RG16UI",           PixelFormatContent::ColorRGBA,    0xFFFF0000,         0x0000FFFF,         0,                  0,                  PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::RG32F,            PixelFormatDescription("RG32F",            PixelFormatContent::ColorRGBA,    0xFFFFFFFF00000000, 0x00000000FFFFFFFF, 0,                  0,                  PixelFormatSubType::Float));
-		SetupPixelFormat(PixelFormat::RG32I,            PixelFormatDescription("RG32I",            PixelFormatContent::ColorRGBA,    0xFFFFFFFF00000000, 0x00000000FFFFFFFF, 0,                  0,                  PixelFormatSubType::Int));
-		SetupPixelFormat(PixelFormat::RG32UI,           PixelFormatDescription("RG32UI",           PixelFormatContent::ColorRGBA,    0xFFFFFFFF00000000, 0x00000000FFFFFFFF, 0,                  0,                  PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::RGB8,             PixelFormatDescription("RGB8",             PixelFormatContent::ColorRGBA,    0xFF000000,         0x00FF0000,         0x0000FF00,         0,                  PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::RGB8_SRGB,        PixelFormatDescription("RGB8_SRGB",        PixelFormatContent::ColorRGBA,    0xFF000000,         0x00FF0000,         0x0000FF00,         0,                  PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::RGB16F,           PixelFormatDescription("RGB16F",           PixelFormatContent::ColorRGBA,    0xFFFF00000000,     0x0000FFFF0000,     0x00000000FFFF,     0,                  PixelFormatSubType::Half));
-		SetupPixelFormat(PixelFormat::RGB16I,           PixelFormatDescription("RGB16I",           PixelFormatContent::ColorRGBA,    0xFFFF00000000,     0x0000FFFF0000,     0x00000000FFFF,     0,                  PixelFormatSubType::Int));
-		SetupPixelFormat(PixelFormat::RGB16UI,          PixelFormatDescription("RGB16UI",          PixelFormatContent::ColorRGBA,    0xFFFF000000000000, 0x0000FFFF00000000, 0x00000000FFFF0000, 0,                  PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::RGB32F,           PixelFormatDescription("RGB32F",           PixelFormatContent::ColorRGBA,    b32,                b32 >> 32,          b32 >> 64,          0,                  PixelFormatSubType::Float));
-		SetupPixelFormat(PixelFormat::RGB32I,           PixelFormatDescription("RGB32I",           PixelFormatContent::ColorRGBA,    b32,                b32 >> 32,          b32 >> 64,          0,                  PixelFormatSubType::Int));
-		SetupPixelFormat(PixelFormat::RGB32UI,          PixelFormatDescription("RGB32UI",          PixelFormatContent::ColorRGBA,    b32,                b32 >> 32,          b32 >> 64,          0,                  PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::A8Unorm,               PixelFormatDescription("A8",               PixelFormatContent::ColorRGBA,    0,                  0,                  0,                  0xFF,               PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::BGR8Unorm,             PixelFormatDescription("BGR8",             PixelFormatContent::ColorRGBA,    0x0000FF,           0x00FF00,           0xFF0000,           0,                  PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::BGRA8Unorm,            PixelFormatDescription("BGRA8",            PixelFormatContent::ColorRGBA,    0x0000FF00,         0x00FF0000,         0xFF000000,         0x000000FF,         PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::BC1,             PixelFormatDescription("DXT1",             PixelFormatContent::ColorRGBA,    8,                                                                              PixelFormatSubType::Compressed));
+		SetupPixelFormat(PixelFormat::BC2,             PixelFormatDescription("DXT3",             PixelFormatContent::ColorRGBA,    16,                                                                             PixelFormatSubType::Compressed));
+		SetupPixelFormat(PixelFormat::BC3,             PixelFormatDescription("DXT5",             PixelFormatContent::ColorRGBA,    16,                                                                             PixelFormatSubType::Compressed));
+		SetupPixelFormat(PixelFormat::L8Unorm,               PixelFormatDescription("L8",               PixelFormatContent::ColorRGBA,    0xFF,               0xFF,               0xFF,               0,                  PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::LA8Unorm,              PixelFormatDescription("LA8",              PixelFormatContent::ColorRGBA,    0xFF00,             0xFF00,             0xFF00,             0x00FF,             PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::R8Unorm,               PixelFormatDescription("R8",               PixelFormatContent::ColorRGBA,    0xFF,               0,                  0,                  0,                  PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::R8Sint,              PixelFormatDescription("R8I",              PixelFormatContent::ColorRGBA,    0xFF,               0,                  0,                  0,                  PixelFormatSubType::Int));
+		SetupPixelFormat(PixelFormat::R8Uint,             PixelFormatDescription("R8UI",             PixelFormatContent::ColorRGBA,    0xFF,               0,                  0,                  0,                  PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::R16Unorm,              PixelFormatDescription("R16",              PixelFormatContent::ColorRGBA,    0xFFFF,             0,                  0,                  0,                  PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::R16Float,             PixelFormatDescription("R16F",             PixelFormatContent::ColorRGBA,    0xFFFF,             0,                  0,                  0,                  PixelFormatSubType::Half));
+		SetupPixelFormat(PixelFormat::R16Sint,             PixelFormatDescription("R16I",             PixelFormatContent::ColorRGBA,    0xFFFF,             0,                  0,                  0,                  PixelFormatSubType::Int));
+		SetupPixelFormat(PixelFormat::R16Uint,            PixelFormatDescription("R16UI",            PixelFormatContent::ColorRGBA,    0xFFFF,             0,                  0,                  0,                  PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::R32Float,             PixelFormatDescription("R32F",             PixelFormatContent::ColorRGBA,    0xFFFFFFFF,         0,                  0,                  0,                  PixelFormatSubType::Float));
+		SetupPixelFormat(PixelFormat::R32Sint,             PixelFormatDescription("R32I",             PixelFormatContent::ColorRGBA,    0xFFFFFFFF,         0,                  0,                  0,                  PixelFormatSubType::Int));
+		SetupPixelFormat(PixelFormat::R32Uint,            PixelFormatDescription("R32UI",            PixelFormatContent::ColorRGBA,    0xFFFFFFFF,         0,                  0,                  0,                  PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::RG8Unorm,              PixelFormatDescription("RG8",              PixelFormatContent::ColorRGBA,    0xFF00,             0x00FF,             0,                  0,                  PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::RG8Sint,             PixelFormatDescription("RG8I",             PixelFormatContent::ColorRGBA,    0xFF00,             0x00FF,             0,                  0,                  PixelFormatSubType::Int));
+		SetupPixelFormat(PixelFormat::RG8Uint,            PixelFormatDescription("RG8UI",            PixelFormatContent::ColorRGBA,    0xFF00,             0x00FF,             0,                  0,                  PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::RG16Unorm,             PixelFormatDescription("RG16",             PixelFormatContent::ColorRGBA,    0xFFFF0000,         0x0000FFFF,         0,                  0,                  PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::RG16Float,            PixelFormatDescription("RG16F",            PixelFormatContent::ColorRGBA,    0xFFFF0000,         0x0000FFFF,         0,                  0,                  PixelFormatSubType::Half));
+		SetupPixelFormat(PixelFormat::RG16Sint,            PixelFormatDescription("RG16I",            PixelFormatContent::ColorRGBA,    0xFFFF0000,         0x0000FFFF,         0,                  0,                  PixelFormatSubType::Int));
+		SetupPixelFormat(PixelFormat::RG16Uint,           PixelFormatDescription("RG16UI",           PixelFormatContent::ColorRGBA,    0xFFFF0000,         0x0000FFFF,         0,                  0,                  PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::RG32Float,            PixelFormatDescription("RG32F",            PixelFormatContent::ColorRGBA,    0xFFFFFFFF00000000, 0x00000000FFFFFFFF, 0,                  0,                  PixelFormatSubType::Float));
+		SetupPixelFormat(PixelFormat::RG32Sint,            PixelFormatDescription("RG32I",            PixelFormatContent::ColorRGBA,    0xFFFFFFFF00000000, 0x00000000FFFFFFFF, 0,                  0,                  PixelFormatSubType::Int));
+		SetupPixelFormat(PixelFormat::RG32Uint,           PixelFormatDescription("RG32UI",           PixelFormatContent::ColorRGBA,    0xFFFFFFFF00000000, 0x00000000FFFFFFFF, 0,                  0,                  PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::RGB8Unorm,             PixelFormatDescription("RGB8",             PixelFormatContent::ColorRGBA,    0xFF000000,         0x00FF0000,         0x0000FF00,         0,                  PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::RGB16Float,           PixelFormatDescription("RGB16F",           PixelFormatContent::ColorRGBA,    0xFFFF00000000,     0x0000FFFF0000,     0x00000000FFFF,     0,                  PixelFormatSubType::Half));
+		SetupPixelFormat(PixelFormat::RGB16Sint,           PixelFormatDescription("RGB16I",           PixelFormatContent::ColorRGBA,    0xFFFF00000000,     0x0000FFFF0000,     0x00000000FFFF,     0,                  PixelFormatSubType::Int));
+		SetupPixelFormat(PixelFormat::RGB16Uint,          PixelFormatDescription("RGB16UI",          PixelFormatContent::ColorRGBA,    0xFFFF000000000000, 0x0000FFFF00000000, 0x00000000FFFF0000, 0,                  PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::RGB32Float,           PixelFormatDescription("RGB32F",           PixelFormatContent::ColorRGBA,    b32,                b32 >> 32,          b32 >> 64,          0,                  PixelFormatSubType::Float));
+		SetupPixelFormat(PixelFormat::RGB32Sint,           PixelFormatDescription("RGB32I",           PixelFormatContent::ColorRGBA,    b32,                b32 >> 32,          b32 >> 64,          0,                  PixelFormatSubType::Int));
+		SetupPixelFormat(PixelFormat::RGB32Uint,          PixelFormatDescription("RGB32UI",          PixelFormatContent::ColorRGBA,    b32,                b32 >> 32,          b32 >> 64,          0,                  PixelFormatSubType::Unsigned));
 		SetupPixelFormat(PixelFormat::RGBA4,            PixelFormatDescription("RGBA4",            PixelFormatContent::ColorRGBA,    0xF000,             0x0F00,             0x00F0,             0x000F,             PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::RGB5A1,           PixelFormatDescription("RGB5A1",           PixelFormatContent::ColorRGBA,    0xF800,             0x07C0,             0x003E,             0x0001,             PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::RGBA8,            PixelFormatDescription("RGBA8",            PixelFormatContent::ColorRGBA,    0xFF000000,         0x00FF0000,         0x0000FF00,         0x000000FF,         PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::RGBA8_SRGB,       PixelFormatDescription("RGBA8_SRGB",       PixelFormatContent::ColorRGBA,    0xFF000000,         0x00FF0000,         0x0000FF00,         0x000000FF,         PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::RGBA16F,          PixelFormatDescription("RGBA16F",          PixelFormatContent::ColorRGBA,    0xFFFF000000000000, 0x0000FFFF00000000, 0x00000000FFFF0000, 0x000000000000FFFF, PixelFormatSubType::Half));
-		SetupPixelFormat(PixelFormat::RGBA16I,          PixelFormatDescription("RGBA16I",          PixelFormatContent::ColorRGBA,    0xFFFF000000000000, 0x0000FFFF00000000, 0x00000000FFFF0000, 0x000000000000FFFF, PixelFormatSubType::Int));
-		SetupPixelFormat(PixelFormat::RGBA16UI,         PixelFormatDescription("RGBA16UI",         PixelFormatContent::ColorRGBA,    0xFFFF000000000000, 0x0000FFFF00000000, 0x00000000FFFF0000, 0x000000000000FFFF, PixelFormatSubType::Unsigned));
-		SetupPixelFormat(PixelFormat::RGBA32F,          PixelFormatDescription("RGBA32F",          PixelFormatContent::ColorRGBA,    b32,                b32 >> 32,          b32 >> 64,          b32 >> 96,          PixelFormatSubType::Float));
-		SetupPixelFormat(PixelFormat::RGBA32I,          PixelFormatDescription("RGBA32I",          PixelFormatContent::ColorRGBA,    b32,                b32 >> 32,          b32 >> 64,          b32 >> 96,          PixelFormatSubType::Int));
-		SetupPixelFormat(PixelFormat::RGBA32UI,         PixelFormatDescription("RGBA32UI",         PixelFormatContent::ColorRGBA,    b32,                b32 >> 32,          b32 >> 64,          b32 >> 96,          PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::RGB5A1Unorm,           PixelFormatDescription("RGB5A1",           PixelFormatContent::ColorRGBA,    0xF800,             0x07C0,             0x003E,             0x0001,             PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::RGBA8Unorm,            PixelFormatDescription("RGBA8",            PixelFormatContent::ColorRGBA,    0xFF000000,         0x00FF0000,         0x0000FF00,         0x000000FF,         PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::RGBA16Float,          PixelFormatDescription("RGBA16F",          PixelFormatContent::ColorRGBA,    0xFFFF000000000000, 0x0000FFFF00000000, 0x00000000FFFF0000, 0x000000000000FFFF, PixelFormatSubType::Half));
+		SetupPixelFormat(PixelFormat::RGBA16Sint,          PixelFormatDescription("RGBA16I",          PixelFormatContent::ColorRGBA,    0xFFFF000000000000, 0x0000FFFF00000000, 0x00000000FFFF0000, 0x000000000000FFFF, PixelFormatSubType::Int));
+		SetupPixelFormat(PixelFormat::RGBA16Uint,         PixelFormatDescription("RGBA16UI",         PixelFormatContent::ColorRGBA,    0xFFFF000000000000, 0x0000FFFF00000000, 0x00000000FFFF0000, 0x000000000000FFFF, PixelFormatSubType::Unsigned));
+		SetupPixelFormat(PixelFormat::RGBA32Float,          PixelFormatDescription("RGBA32F",          PixelFormatContent::ColorRGBA,    b32,                b32 >> 32,          b32 >> 64,          b32 >> 96,          PixelFormatSubType::Float));
+		SetupPixelFormat(PixelFormat::RGBA32Sint,          PixelFormatDescription("RGBA32I",          PixelFormatContent::ColorRGBA,    b32,                b32 >> 32,          b32 >> 64,          b32 >> 96,          PixelFormatSubType::Int));
+		SetupPixelFormat(PixelFormat::RGBA32Uint,         PixelFormatDescription("RGBA32UI",         PixelFormatContent::ColorRGBA,    b32,                b32 >> 32,          b32 >> 64,          b32 >> 96,          PixelFormatSubType::Unsigned));
 		SetupPixelFormat(PixelFormat::Depth16,          PixelFormatDescription("Depth16",          PixelFormatContent::Depth,        0xFFFF,             0,                  0,                  0,                  PixelFormatSubType::Unsigned));
 		SetupPixelFormat(PixelFormat::Depth16Stencil8,  PixelFormatDescription("Depth16Stencil8",  PixelFormatContent::DepthStencil, 0xFFFF0000,         0x0000FF00,         0,                  0,                  PixelFormatSubType::Unsigned));
 		SetupPixelFormat(PixelFormat::Depth24,          PixelFormatDescription("Depth24",          PixelFormatContent::Depth,        0xFFFFFF,           0,                  0,                  0,                  PixelFormatSubType::Unsigned));
@@ -1574,17 +1534,16 @@ namespace Nz
 		}
 
 		/***********************************A8************************************/
-		RegisterConverter<PixelFormat::A8, PixelFormat::BGRA8>();
-		RegisterConverter<PixelFormat::A8, PixelFormat::LA8>();
-		RegisterConverter<PixelFormat::A8, PixelFormat::RGB5A1>();
-		RegisterConverter<PixelFormat::A8, PixelFormat::RGBA4>();
-		RegisterConverter<PixelFormat::A8, PixelFormat::RGBA8>();
+		RegisterConverter<PixelFormat::A8Unorm, PixelFormat::BGRA8Unorm>();
+		RegisterConverter<PixelFormat::A8Unorm, PixelFormat::LA8Unorm>();
+		RegisterConverter<PixelFormat::A8Unorm, PixelFormat::RGB5A1Unorm>();
+		RegisterConverter<PixelFormat::A8Unorm, PixelFormat::RGBA4>();
+		RegisterConverter<PixelFormat::A8Unorm, PixelFormat::RGBA8Unorm>();
 
 		/**********************************BGR8***********************************/
-		RegisterConverter<PixelFormat::BGR8, PixelFormat::BGR8_SRGB>();
-		RegisterConverter<PixelFormat::BGR8, PixelFormat::BGRA8>();
-		RegisterConverter<PixelFormat::BGR8, PixelFormat::L8>();
-		RegisterConverter<PixelFormat::BGR8, PixelFormat::LA8>();/*
+		RegisterConverter<PixelFormat::BGR8Unorm, PixelFormat::BGRA8Unorm>();
+		RegisterConverter<PixelFormat::BGR8Unorm, PixelFormat::L8Unorm>();
+		RegisterConverter<PixelFormat::BGR8Unorm, PixelFormat::LA8Unorm>();/*
 		RegisterConverter<PixelFormat::BGR8, PixelFormat::RGB16F>();
 		RegisterConverter<PixelFormat::BGR8, PixelFormat::RGB16I>();
 		RegisterConverter<PixelFormat::BGR8, PixelFormat::RGB32F>();
@@ -1593,18 +1552,17 @@ namespace Nz
 		RegisterConverter<PixelFormat::BGR8, PixelFormat::RGBA16I>();
 		RegisterConverter<PixelFormat::BGR8, PixelFormat::RGBA32F>();
 		RegisterConverter<PixelFormat::BGR8, PixelFormat::RGBA32I>();*/
-		RegisterConverter<PixelFormat::BGR8, PixelFormat::RGB5A1>();
-		RegisterConverter<PixelFormat::BGR8, PixelFormat::RGB8>();
-		RegisterConverter<PixelFormat::BGR8, PixelFormat::RGBA4>();
-		RegisterConverter<PixelFormat::BGR8, PixelFormat::RGBA8>();
-		RegisterConverter<PixelFormat::BGR8, PixelFormat::RGBA32F>();
+		RegisterConverter<PixelFormat::BGR8Unorm, PixelFormat::RGB5A1Unorm>();
+		RegisterConverter<PixelFormat::BGR8Unorm, PixelFormat::RGB8Unorm>();
+		RegisterConverter<PixelFormat::BGR8Unorm, PixelFormat::RGBA4>();
+		RegisterConverter<PixelFormat::BGR8Unorm, PixelFormat::RGBA8Unorm>();
+		RegisterConverter<PixelFormat::BGR8Unorm, PixelFormat::RGBA32Float>();
 
 		/**********************************BGRA8**********************************/
-		RegisterConverter<PixelFormat::BGRA8, PixelFormat::A8>();
-		RegisterConverter<PixelFormat::BGRA8, PixelFormat::BGR8>();
-		RegisterConverter<PixelFormat::BGRA8, PixelFormat::BGRA8_SRGB>();
-		RegisterConverter<PixelFormat::BGRA8, PixelFormat::L8>();
-		RegisterConverter<PixelFormat::BGRA8, PixelFormat::LA8>();/*
+		RegisterConverter<PixelFormat::BGRA8Unorm, PixelFormat::A8Unorm>();
+		RegisterConverter<PixelFormat::BGRA8Unorm, PixelFormat::BGR8Unorm>();
+		RegisterConverter<PixelFormat::BGRA8Unorm, PixelFormat::L8Unorm>();
+		RegisterConverter<PixelFormat::BGRA8Unorm, PixelFormat::LA8Unorm>();/*
 		RegisterConverter<PixelFormat::BGRA8, PixelFormat::RGB16F>();
 		RegisterConverter<PixelFormat::BGRA8, PixelFormat::RGB16I>();
 		RegisterConverter<PixelFormat::BGRA8, PixelFormat::RGB32F>();
@@ -1613,11 +1571,11 @@ namespace Nz
 		RegisterConverter<PixelFormat::BGRA8, PixelFormat::RGBA16I>();
 		RegisterConverter<PixelFormat::BGRA8, PixelFormat::RGBA32F>();
 		RegisterConverter<PixelFormat::BGRA8, PixelFormat::RGBA32I>();*/
-		RegisterConverter<PixelFormat::BGRA8, PixelFormat::RGB5A1>();
-		RegisterConverter<PixelFormat::BGRA8, PixelFormat::RGB8>();
-		RegisterConverter<PixelFormat::BGRA8, PixelFormat::RGBA4>();
-		RegisterConverter<PixelFormat::BGRA8, PixelFormat::RGBA8>();
-		RegisterConverter<PixelFormat::BGRA8, PixelFormat::RGBA32F>();
+		RegisterConverter<PixelFormat::BGRA8Unorm, PixelFormat::RGB5A1Unorm>();
+		RegisterConverter<PixelFormat::BGRA8Unorm, PixelFormat::RGB8Unorm>();
+		RegisterConverter<PixelFormat::BGRA8Unorm, PixelFormat::RGBA4>();
+		RegisterConverter<PixelFormat::BGRA8Unorm, PixelFormat::RGBA8Unorm>();
+		RegisterConverter<PixelFormat::BGRA8Unorm, PixelFormat::RGBA32Float>();
 
 		/**********************************DXT1***********************************/
 		///TODO: Décompresseur DXT1
@@ -1689,9 +1647,9 @@ namespace Nz
 	*/
 
 		/***********************************L8************************************/
-		RegisterConverter<PixelFormat::L8, PixelFormat::BGR8>();
-		RegisterConverter<PixelFormat::L8, PixelFormat::BGRA8>();
-		RegisterConverter<PixelFormat::L8, PixelFormat::LA8>();/*
+		RegisterConverter<PixelFormat::L8Unorm, PixelFormat::BGR8Unorm>();
+		RegisterConverter<PixelFormat::L8Unorm, PixelFormat::BGRA8Unorm>();
+		RegisterConverter<PixelFormat::L8Unorm, PixelFormat::LA8Unorm>();/*
 		RegisterConverter<PixelFormat::L8, PixelFormat::RGB16F>();
 		RegisterConverter<PixelFormat::L8, PixelFormat::RGB16I>();
 		RegisterConverter<PixelFormat::L8, PixelFormat::RGB32F>();
@@ -1700,17 +1658,17 @@ namespace Nz
 		RegisterConverter<PixelFormat::L8, PixelFormat::RGBA16I>();
 		RegisterConverter<PixelFormat::L8, PixelFormat::RGBA32F>();
 		RegisterConverter<PixelFormat::L8, PixelFormat::RGBA32I>();*/
-		RegisterConverter<PixelFormat::L8, PixelFormat::RGB5A1>();
-		RegisterConverter<PixelFormat::L8, PixelFormat::RGB8>();
-		RegisterConverter<PixelFormat::L8, PixelFormat::RGBA4>();
-		RegisterConverter<PixelFormat::L8, PixelFormat::RGBA8>();
-		RegisterConverter<PixelFormat::L8, PixelFormat::RGBA32F>();
+		RegisterConverter<PixelFormat::L8Unorm, PixelFormat::RGB5A1Unorm>();
+		RegisterConverter<PixelFormat::L8Unorm, PixelFormat::RGB8Unorm>();
+		RegisterConverter<PixelFormat::L8Unorm, PixelFormat::RGBA4>();
+		RegisterConverter<PixelFormat::L8Unorm, PixelFormat::RGBA8Unorm>();
+		RegisterConverter<PixelFormat::L8Unorm, PixelFormat::RGBA32Float>();
 
 		/***********************************LA8***********************************/
-		RegisterConverter<PixelFormat::LA8, PixelFormat::A8>();
-		RegisterConverter<PixelFormat::LA8, PixelFormat::BGR8>();
-		RegisterConverter<PixelFormat::LA8, PixelFormat::BGRA8>();
-		RegisterConverter<PixelFormat::LA8, PixelFormat::L8>();/*
+		RegisterConverter<PixelFormat::LA8Unorm, PixelFormat::A8Unorm>();
+		RegisterConverter<PixelFormat::LA8Unorm, PixelFormat::BGR8Unorm>();
+		RegisterConverter<PixelFormat::LA8Unorm, PixelFormat::BGRA8Unorm>();
+		RegisterConverter<PixelFormat::LA8Unorm, PixelFormat::L8Unorm>();/*
 		RegisterConverter<PixelFormat::LA8, PixelFormat::RGB16F>();
 		RegisterConverter<PixelFormat::LA8, PixelFormat::RGB16I>();
 		RegisterConverter<PixelFormat::LA8, PixelFormat::RGB32F>();
@@ -1719,18 +1677,18 @@ namespace Nz
 		RegisterConverter<PixelFormat::LA8, PixelFormat::RGBA16I>();
 		RegisterConverter<PixelFormat::LA8, PixelFormat::RGBA32F>();
 		RegisterConverter<PixelFormat::LA8, PixelFormat::RGBA32I>();*/
-		RegisterConverter<PixelFormat::LA8, PixelFormat::RGB5A1>();
-		RegisterConverter<PixelFormat::LA8, PixelFormat::RGB8>();
-		RegisterConverter<PixelFormat::LA8, PixelFormat::RGBA4>();
-		RegisterConverter<PixelFormat::LA8, PixelFormat::RGBA8>();
-		RegisterConverter<PixelFormat::LA8, PixelFormat::RGBA32F>();
+		RegisterConverter<PixelFormat::LA8Unorm, PixelFormat::RGB5A1Unorm>();
+		RegisterConverter<PixelFormat::LA8Unorm, PixelFormat::RGB8Unorm>();
+		RegisterConverter<PixelFormat::LA8Unorm, PixelFormat::RGBA4>();
+		RegisterConverter<PixelFormat::LA8Unorm, PixelFormat::RGBA8Unorm>();
+		RegisterConverter<PixelFormat::LA8Unorm, PixelFormat::RGBA32Float>();
 
 		/**********************************RGBA4**********************************/
-		RegisterConverter<PixelFormat::RGBA4, PixelFormat::A8>();
-		RegisterConverter<PixelFormat::RGBA4, PixelFormat::BGR8>();
-		RegisterConverter<PixelFormat::RGBA4, PixelFormat::BGRA8>();
-		RegisterConverter<PixelFormat::RGBA4, PixelFormat::L8>();
-		RegisterConverter<PixelFormat::RGBA4, PixelFormat::LA8>();/*
+		RegisterConverter<PixelFormat::RGBA4, PixelFormat::A8Unorm>();
+		RegisterConverter<PixelFormat::RGBA4, PixelFormat::BGR8Unorm>();
+		RegisterConverter<PixelFormat::RGBA4, PixelFormat::BGRA8Unorm>();
+		RegisterConverter<PixelFormat::RGBA4, PixelFormat::L8Unorm>();
+		RegisterConverter<PixelFormat::RGBA4, PixelFormat::LA8Unorm>();/*
 		RegisterConverter<PixelFormat::RGBA4, PixelFormat::RGB16F>();
 		RegisterConverter<PixelFormat::RGBA4, PixelFormat::RGB16I>();
 		RegisterConverter<PixelFormat::RGBA4, PixelFormat::RGB32F>();
@@ -1739,16 +1697,16 @@ namespace Nz
 		RegisterConverter<PixelFormat::RGBA4, PixelFormat::RGBA16I>();
 		RegisterConverter<PixelFormat::RGBA4, PixelFormat::RGBA32F>();
 		RegisterConverter<PixelFormat::RGBA4, PixelFormat::RGBA32I>();*/
-		RegisterConverter<PixelFormat::RGBA4, PixelFormat::RGB5A1>();
-		RegisterConverter<PixelFormat::RGBA4, PixelFormat::RGB8>();
-		RegisterConverter<PixelFormat::RGBA4, PixelFormat::RGBA8>();
+		RegisterConverter<PixelFormat::RGBA4, PixelFormat::RGB5A1Unorm>();
+		RegisterConverter<PixelFormat::RGBA4, PixelFormat::RGB8Unorm>();
+		RegisterConverter<PixelFormat::RGBA4, PixelFormat::RGBA8Unorm>();
 
 		/*********************************RGB5A1**********************************/
-		RegisterConverter<PixelFormat::RGB5A1, PixelFormat::A8>();
-		RegisterConverter<PixelFormat::RGB5A1, PixelFormat::BGR8>();
-		RegisterConverter<PixelFormat::RGB5A1, PixelFormat::BGRA8>();
-		RegisterConverter<PixelFormat::RGB5A1, PixelFormat::L8>();
-		RegisterConverter<PixelFormat::RGB5A1, PixelFormat::LA8>();/*
+		RegisterConverter<PixelFormat::RGB5A1Unorm, PixelFormat::A8Unorm>();
+		RegisterConverter<PixelFormat::RGB5A1Unorm, PixelFormat::BGR8Unorm>();
+		RegisterConverter<PixelFormat::RGB5A1Unorm, PixelFormat::BGRA8Unorm>();
+		RegisterConverter<PixelFormat::RGB5A1Unorm, PixelFormat::L8Unorm>();
+		RegisterConverter<PixelFormat::RGB5A1Unorm, PixelFormat::LA8Unorm>();/*
 		RegisterConverter<PixelFormat::RGB5A1, PixelFormat::RGB16F>();
 		RegisterConverter<PixelFormat::RGB5A1, PixelFormat::RGB16I>();
 		RegisterConverter<PixelFormat::RGB5A1, PixelFormat::RGB32F>();
@@ -1757,15 +1715,15 @@ namespace Nz
 		RegisterConverter<PixelFormat::RGB5A1, PixelFormat::RGBA16I>();
 		RegisterConverter<PixelFormat::RGB5A1, PixelFormat::RGBA32F>();
 		RegisterConverter<PixelFormat::RGB5A1, PixelFormat::RGBA32I>();*/
-		RegisterConverter<PixelFormat::RGB5A1, PixelFormat::RGB8>();
-		RegisterConverter<PixelFormat::RGB5A1, PixelFormat::RGBA4>();
-		RegisterConverter<PixelFormat::RGB5A1, PixelFormat::RGBA8>();
+		RegisterConverter<PixelFormat::RGB5A1Unorm, PixelFormat::RGB8Unorm>();
+		RegisterConverter<PixelFormat::RGB5A1Unorm, PixelFormat::RGBA4>();
+		RegisterConverter<PixelFormat::RGB5A1Unorm, PixelFormat::RGBA8Unorm>();
 
 		/**********************************RGB8***********************************/
-		RegisterConverter<PixelFormat::RGB8, PixelFormat::BGR8>();
-		RegisterConverter<PixelFormat::RGB8, PixelFormat::BGRA8>();
-		RegisterConverter<PixelFormat::RGB8, PixelFormat::L8>();
-		RegisterConverter<PixelFormat::RGB8, PixelFormat::LA8>();/*
+		RegisterConverter<PixelFormat::RGB8Unorm, PixelFormat::BGR8Unorm>();
+		RegisterConverter<PixelFormat::RGB8Unorm, PixelFormat::BGRA8Unorm>();
+		RegisterConverter<PixelFormat::RGB8Unorm, PixelFormat::L8Unorm>();
+		RegisterConverter<PixelFormat::RGB8Unorm, PixelFormat::LA8Unorm>();/*
 		RegisterConverter<PixelFormat::RGB8, PixelFormat::RGB16F>();
 		RegisterConverter<PixelFormat::RGB8, PixelFormat::RGB16I>();
 		RegisterConverter<PixelFormat::RGB8, PixelFormat::RGB32F>();
@@ -1774,18 +1732,17 @@ namespace Nz
 		RegisterConverter<PixelFormat::RGB8, PixelFormat::RGBA16I>();
 		RegisterConverter<PixelFormat::RGB8, PixelFormat::RGBA32F>();
 		RegisterConverter<PixelFormat::RGB8, PixelFormat::RGBA32I>();*/
-		RegisterConverter<PixelFormat::RGB8, PixelFormat::RGB5A1>();
-		RegisterConverter<PixelFormat::RGB8, PixelFormat::RGB8_SRGB>();
-		RegisterConverter<PixelFormat::RGB8, PixelFormat::RGBA4>();
-		RegisterConverter<PixelFormat::RGB8, PixelFormat::RGBA8>();
-		RegisterConverter<PixelFormat::RGB8, PixelFormat::RGBA32F>();
+		RegisterConverter<PixelFormat::RGB8Unorm, PixelFormat::RGB5A1Unorm>();
+		RegisterConverter<PixelFormat::RGB8Unorm, PixelFormat::RGBA4>();
+		RegisterConverter<PixelFormat::RGB8Unorm, PixelFormat::RGBA8Unorm>();
+		RegisterConverter<PixelFormat::RGB8Unorm, PixelFormat::RGBA32Float>();
 
 		/**********************************RGBA8**********************************/
-		RegisterConverter<PixelFormat::RGBA8, PixelFormat::A8>();
-		RegisterConverter<PixelFormat::RGBA8, PixelFormat::BGR8>();
-		RegisterConverter<PixelFormat::RGBA8, PixelFormat::BGRA8>();
-		RegisterConverter<PixelFormat::RGBA8, PixelFormat::L8>();
-		RegisterConverter<PixelFormat::RGBA8, PixelFormat::LA8>();/*
+		RegisterConverter<PixelFormat::RGBA8Unorm, PixelFormat::A8Unorm>();
+		RegisterConverter<PixelFormat::RGBA8Unorm, PixelFormat::BGR8Unorm>();
+		RegisterConverter<PixelFormat::RGBA8Unorm, PixelFormat::BGRA8Unorm>();
+		RegisterConverter<PixelFormat::RGBA8Unorm, PixelFormat::L8Unorm>();
+		RegisterConverter<PixelFormat::RGBA8Unorm, PixelFormat::LA8Unorm>();/*
 		RegisterConverter<PixelFormat::RGBA8, PixelFormat::RGB16F>();
 		RegisterConverter<PixelFormat::RGBA8, PixelFormat::RGB16I>();
 		RegisterConverter<PixelFormat::RGBA8, PixelFormat::RGB32F>();
@@ -1794,11 +1751,10 @@ namespace Nz
 		RegisterConverter<PixelFormat::RGBA8, PixelFormat::RGBA16I>();
 		RegisterConverter<PixelFormat::RGBA8, PixelFormat::RGBA32F>();
 		RegisterConverter<PixelFormat::RGBA8, PixelFormat::RGBA32I>();*/
-		RegisterConverter<PixelFormat::RGBA8, PixelFormat::RGB5A1>();
-		RegisterConverter<PixelFormat::RGBA8, PixelFormat::RGB8>();
-		RegisterConverter<PixelFormat::RGBA8, PixelFormat::RGBA4>();
-		RegisterConverter<PixelFormat::RGBA8, PixelFormat::RGBA8_SRGB>();
-		RegisterConverter<PixelFormat::RGBA8, PixelFormat::RGBA32F>();
+		RegisterConverter<PixelFormat::RGBA8Unorm, PixelFormat::RGB5A1Unorm>();
+		RegisterConverter<PixelFormat::RGBA8Unorm, PixelFormat::RGB8Unorm>();
+		RegisterConverter<PixelFormat::RGBA8Unorm, PixelFormat::RGBA4>();
+		RegisterConverter<PixelFormat::RGBA8Unorm, PixelFormat::RGBA32Float>();
 
 		/**********************************RGBA32F**********************************/
 		RegisterConverter<PixelFormat::RGBA32F, PixelFormat::RGBA8>();
