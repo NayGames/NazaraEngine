@@ -2,7 +2,6 @@ package com.sirlynix.nazaraExample
 
 import android.app.NativeActivity
 import android.os.Bundle
-import android.widget.TextView
 import com.sirlynix.nazaraExample.androidTest.databinding.ActivityMainBinding
 
 class MainActivity : NativeActivity() {

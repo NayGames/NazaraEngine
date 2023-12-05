@@ -12,23 +12,19 @@ namespace Nz
 {
 	namespace NAZARA_ANONYMOUS_NAMESPACE
 	{
-		android_LogPriority s_logPriority[] = {
-			ANDROID_LOG_FATAL,
-			ANDROID_LOG_ERROR,
-			ANDROID_LOG_ERROR,
-			ANDROID_LOG_WARN
+		constexpr EnumArray<ErrorType, android_LogPriority> s_logPriorities = {
+			ANDROID_LOG_FATAL, // ErrorType::AssertFailed
+			ANDROID_LOG_ERROR, // ErrorType::Internal
+			ANDROID_LOG_ERROR, // ErrorType::Normal
+			ANDROID_LOG_WARN   // ErrorType::Warning
 		};
 
-		static_assert(sizeof(s_logPriority) / sizeof(android_LogPriority) == ErrorTypeCount, "Log priority array is incomplete");
-
-		const char* s_errorType[] = {
-			"Assert failed",	// ErrorType::AssertFailed
-			"Internal error",	// ErrorType::Internal
-			"Error",		    // ErrorType::Normal
-			"Warning"		    // ErrorType::Warning
+		constexpr EnumArray<ErrorType, std::string_view> s_errorTypes = {
+			"Assert failed: ",  // ErrorType::AssertFailed
+			"Internal error: ", // ErrorType::Internal
+			"Error: ",          // ErrorType::Normal
+			"Warning: "         // ErrorType::Warning
 		};
-
-		static_assert(sizeof(s_errorType) / sizeof(const char*) == ErrorTypeCount, "Error type array is incomplete");
 	}
 
 	AndroidLogger::~AndroidLogger() = default;
@@ -62,8 +58,8 @@ namespace Nz
 		nullTerminatedError[error.size()] = '\0';
 
 		if (line != 0 && file && function)
-			__android_log_print(s_logPriority[UnderlyingCast(type)], "NazaraApp", "%s: %s", s_errorType[UnderlyingCast(type)], nullTerminatedError.data());
+			__android_log_print(s_logPriorities[type], "NazaraApp", "%s: %s", s_errorTypes[type], nullTerminatedError.data());
 		else
-			__android_log_print(s_logPriority[UnderlyingCast(type)], "NazaraApp", "%s: %s (in %s at %s:%d)", s_errorType[UnderlyingCast(type)], nullTerminatedError.data(), function, file, line);
+			__android_log_print(s_logPriorities[type], "NazaraApp", "%s: %s (in %s at %s:%d)", s_errorTypes[type], nullTerminatedError.data(), function, file, line);
 	}
 }
