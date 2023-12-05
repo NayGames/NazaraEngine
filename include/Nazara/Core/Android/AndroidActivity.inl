@@ -51,7 +51,8 @@ namespace Nz
 	template<typename F, typename... Args>
 	void AndroidActivity::Start(F&& f, Args&&... args)
 	{
-		m_appThread = std::thread([&]
+		// Capture args by value as the thread can start after the function ended
+		m_appThread = std::thread([this, ... args = std::forward<Args>(args)]
 		{
 			PreMain();
 			f(std::forward<Args>(args)...);
