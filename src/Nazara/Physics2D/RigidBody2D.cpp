@@ -106,7 +106,7 @@ namespace Nz
 		cpVect pos = cpv(cpFloat(position.x), cpFloat(position.y));
 
 		float minDistance = std::numeric_limits<float>::infinity();
-		Vector2f closest;
+		auto closest = Vector2f();
 		for (cpShape* shape : m_shapes)
 		{
 			cpPointQueryInfo result;

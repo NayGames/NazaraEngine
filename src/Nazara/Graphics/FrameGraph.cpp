@@ -140,6 +140,8 @@ namespace Nz
 		auto ShouldMerge = [&](const FramePass& prevPass, const FramePass& nextPass)
 		{
 			//TODO
+			prevPass;
+			nextPass;
 			return false;
 		};
 

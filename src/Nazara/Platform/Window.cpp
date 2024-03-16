@@ -45,7 +45,7 @@ NAZARA_WARNING_MSVC_DISABLE(4701) //< uninitialized variable maybe used (positio
 
 		// If the window is already open, we keep its position
 		bool opened = IsOpen();
-		Vector2i position;
+		auto position = Vector2i();
 		if (opened)
 			position = m_position;
 

@@ -24,6 +24,7 @@ namespace Nz
 		if (propertyIndex == MaterialSettings::InvalidPropertyIndex)
 			return;
 
+		[[maybe_unused]]
 		const auto& valueProperty = settings.GetValueProperty(propertyIndex);
 
 		m_uniformBlockIndex = material.FindUniformBlockByTag(m_blockTag);

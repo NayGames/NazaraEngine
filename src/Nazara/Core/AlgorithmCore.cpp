@@ -46,7 +46,7 @@ namespace Nz
 				{
 				}
 
-				void Generate(float radius, unsigned int recursionLevel, const Rectf& textureCoords, VertexPointers vertexPointers, IndexIterator indices, Boxf* aabb, unsigned int indexOffset)
+				void Generate(float radius, unsigned int recursionLevel, VertexPointers vertexPointers, IndexIterator indices, Boxf* aabb, unsigned int indexOffset)
 				{
 					// Grandement inspiré de http://blog.andreaskahler.com/2009/06/creating-icosphere-mesh-in-code.html
 					const float t = (1.f + 2.236067f)/2.f;
@@ -854,7 +854,7 @@ namespace Nz
 		}
 	}
 
-	void GenerateCone(float length, float radius, unsigned int subdivision, const Matrix4f& matrix, const Rectf& textureCoords, VertexPointers vertexPointers, IndexIterator indices, Boxf* aabb, UInt32 indexOffset)
+	void GenerateCone(float length, float radius, unsigned int subdivision, const Matrix4f& matrix, VertexPointers vertexPointers, IndexIterator indices, Boxf* aabb, UInt32 indexOffset)
 	{
 		constexpr float round = 2.f * Pi<float>;
 		float delta = round/subdivision;
@@ -930,12 +930,12 @@ namespace Nz
 		}
 	}
 
-	void GenerateIcoSphere(float size, unsigned int recursionLevel, const Matrix4f& matrix, const Rectf& textureCoords, VertexPointers vertexPointers, IndexIterator indices, Boxf* aabb, UInt32 indexOffset)
+	void GenerateIcoSphere(float size, unsigned int recursionLevel, const Matrix4f& matrix, VertexPointers vertexPointers, IndexIterator indices, Boxf* aabb, UInt32 indexOffset)
 	{
 		NAZARA_USE_ANONYMOUS_NAMESPACE
 
 		IcoSphereBuilder builder(matrix);
-		builder.Generate(size, recursionLevel, textureCoords, vertexPointers, indices, aabb, indexOffset);
+		builder.Generate(size, recursionLevel, vertexPointers, indices, aabb, indexOffset);
 	}
 
 	void GeneratePlane(const Vector2ui& subdivision, const Vector2f& size, const Matrix4f& matrix, const Rectf& textureCoords, VertexPointers vertexPointers, IndexIterator indices, Boxf* aabb, UInt32 indexOffset)

@@ -129,7 +129,7 @@ namespace Nz
 				pointers.uvPtr = vertexMapper.GetComponentPtr<Vector2f>(VertexComponent::TexCoord);
 
 				IndexMapper indexMapper(*indexBuffer);
-				GenerateCone(primitive.cone.length, primitive.cone.radius, primitive.cone.subdivision, matrix, primitive.textureCoords, pointers, indexMapper.begin(), &aabb);
+				GenerateCone(primitive.cone.length, primitive.cone.radius, primitive.cone.subdivision, matrix, pointers, indexMapper.begin(), &aabb);
 				break;
 			}
 
@@ -205,7 +205,7 @@ namespace Nz
 						pointers.uvPtr = vertexMapper.GetComponentPtr<Vector2f>(VertexComponent::TexCoord);
 
 						IndexMapper indexMapper(*indexBuffer);
-						GenerateIcoSphere(primitive.sphere.size, primitive.sphere.ico.recursionLevel, matrix, primitive.textureCoords, pointers, indexMapper.begin(), &aabb);
+						GenerateIcoSphere(primitive.sphere.size, primitive.sphere.ico.recursionLevel, matrix, pointers, indexMapper.begin(), &aabb);
 						break;
 					}
 

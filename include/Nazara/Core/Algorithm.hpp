@@ -82,9 +82,9 @@ namespace Nz
 	NAZARA_CORE_API void ComputeUvSphereIndexVertexCount(unsigned int sliceCount, unsigned int stackCount, UInt32* indexCount, UInt32* vertexCount);
 
 	NAZARA_CORE_API void GenerateBox(const Vector3f& lengths, const Vector3ui& subdivision, const Matrix4f& matrix, const Rectf& textureCoords, VertexPointers vertexPointers, IndexIterator indices, Boxf* aabb = nullptr, UInt32 indexOffset = 0);
-	NAZARA_CORE_API void GenerateCone(float length, float radius, unsigned int subdivision, const Matrix4f& matrix, const Rectf& textureCoords, VertexPointers vertexPointers, IndexIterator indices, Boxf* aabb = nullptr, UInt32 indexOffset = 0);
+	NAZARA_CORE_API void GenerateCone(float length, float radius, unsigned int subdivision, const Matrix4f& matrix, VertexPointers vertexPointers, IndexIterator indices, Boxf* aabb = nullptr, UInt32 indexOffset = 0);
 	NAZARA_CORE_API void GenerateCubicSphere(float size, unsigned int subdivision, const Matrix4f& matrix, const Rectf& textureCoords, VertexPointers vertexPointers, IndexIterator indices, Boxf* aabb = nullptr, UInt32 indexOffset = 0);
-	NAZARA_CORE_API void GenerateIcoSphere(float size, unsigned int recursionLevel, const Matrix4f& matrix, const Rectf& textureCoords, VertexPointers vertexPointers, IndexIterator indices, Boxf* aabb = nullptr, UInt32 indexOffset = 0);
+	NAZARA_CORE_API void GenerateIcoSphere(float size, unsigned int recursionLevel, const Matrix4f& matrix, VertexPointers vertexPointers, IndexIterator indices, Boxf* aabb = nullptr, UInt32 indexOffset = 0);
 	NAZARA_CORE_API void GeneratePlane(const Vector2ui& subdivision, const Vector2f& size, const Matrix4f& matrix, const Rectf& textureCoords, VertexPointers vertexPointers, IndexIterator indices, Boxf* aabb = nullptr, UInt32 indexOffset = 0);
 	NAZARA_CORE_API void GenerateUvSphere(float size, unsigned int sliceCount, unsigned int stackCount, const Matrix4f& matrix, const Rectf& textureCoords, VertexPointers vertexPointers, IndexIterator indices, Boxf* aabb = nullptr, UInt32 indexOffset = 0);
 

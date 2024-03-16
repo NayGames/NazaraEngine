@@ -30,8 +30,8 @@ int main(int argc, char* argv[])
 	auto& world = ecs.AddWorld<Nz::EnttWorld>();
 	world.AddSystem<Nz::SkeletonSystem>();
 
-	Nz::Physics3DSystem& physSytem = world.AddSystem<Nz::Physics3DSystem>();
-	physSytem.GetPhysWorld().SetGravity(Nz::Vector3f::Zero());
+	Nz::Physics3DSystem& physSystem = world.AddSystem<Nz::Physics3DSystem>();
+	physSystem.GetPhysWorld().SetGravity(Nz::Vector3f::Zero());
 	Nz::RenderSystem& renderSystem = world.AddSystem<Nz::RenderSystem>();
 
 	auto& windowing = app.AddComponent<Nz::WindowingAppComponent>();
@@ -49,7 +49,7 @@ int main(int argc, char* argv[])
 		fs.Mount("assets", resourceDir);
 	}
 
-	physSytem.GetPhysWorld().SetGravity({ 0.f, -9.81f, 0.f });
+	physSystem.GetPhysWorld().SetGravity({ 0.f, -9.81f, 0.f });
 
 	std::optional<Nz::PhysCharacter3D> character;
 
@@ -69,7 +69,7 @@ int main(int argc, char* argv[])
 		characterSettings.collider = playerCollider;
 		characterSettings.position = Nz::Vector3f::Up() * 5.f;
 
-		character.emplace(physSytem.GetPhysWorld(), characterSettings);
+		character.emplace(physSystem.GetPhysWorld(), characterSettings);
 
 		app.AddUpdaterFunc([&]
 		{
